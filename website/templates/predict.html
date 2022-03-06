@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Predict
+{% endblock %}
+
+<div class="predict_main">
+    {% block main %}
+        <h1 class="text-center mt-15">Predict Page</h1>
+
+        <form action="/predict/" method="post" enctype="multipart/form-data">
+            <p>
+                <input type="file" name="file" id="file"></p>
+                <p>
+                    <button type="submit">Submit</button>
+                </p>
+            </form>
+
+            <br>
+
+                {% if p %}
+                    <img src="/static/images/{{ filename }}" height="250px">
+                        <h5>
+                            Your Prediction:
+                            <i>
+                                {{ p }}
+                            </i> <br>
+                            Probability it's a guy:
+                            <i>
+                                {{ prob1 }}
+                            </i> <br>
+                            Probability it's a girl:
+                            <i>
+                                {{ prob2 }}
+                            </i>
+                        </h5>
+                    {% endif %}
+                {% endblock %}
+</div>
