@@ -2,3 +2,4 @@
 *.png
 *.jpg
 *.pdf
+/website/static
